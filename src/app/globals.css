@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #2A2A2A;
+  --font-sans: var(--font-open-sans);
+
+  /* Brand colors */
+  --color-vc-red: #E42313;
+  --color-vc-purple: #934292;
+  --color-vc-blurple: #6B4090;
+  --color-vc-blue: #24B7C3;
+  --color-vc-orange: #EE783B;
+  --color-vc-yellow: #F6A02E;
+  --color-vc-green: #7ABB5C;
+  --color-vc-darkblue: #055864;
+  --color-vc-grey: #4D4D4D;
+
+  /* UI tokens */
+  --color-vc-bg: #F7F7F7;
+  --color-vc-border: #E5E5E5;
+  --color-vc-light: #777777;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Gradient utilities */
+.bg-grad-blue {
+  background: linear-gradient(193deg, #00bfc3, #4488af 40%, #904b99);
+}
+.bg-grad-orange {
+  background: linear-gradient(212deg, #ff9a4b, #fb563c 90%, #f7122d);
+}
+.bg-grad-header {
+  background: linear-gradient(90deg, #055864, #0a7a8f);
+}
+
+/* Timeline */
+.tl {
+  border-left: 3px solid var(--color-vc-border);
+  padding-left: 22px;
+  margin-left: 8px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: var(--color-vc-blue);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--color-vc-blue);
+}
+.tl-list li {
+  position: relative;
+  padding-left: 14px;
+}
+.tl-list li::before {
+  content: '\203A';
+  position: absolute;
+  left: 0;
+  color: var(--color-vc-orange);
+  font-weight: 700;
+}
+
+/* Checklist checkbox */
+.cb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-vc-border);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* Cover decorative circles */
+.cover-deco::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 80px solid rgba(255, 255, 255, 0.08);
+  bottom: -100px;
+  left: -120px;
+}
+.cover-deco::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 50px solid rgba(255, 255, 255, 0.06);
+  bottom: 60px;
+  left: 10px;
+}
+
+/* Welcome block decorative circle */
+.welcome-deco::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 30px solid rgba(255, 255, 255, 0.08);
+  bottom: -40px;
+  left: -30px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print */
+@media print {
+  body { max-width: 100% !important; }
+  nav { display: none !important; }
+  section { page-break-inside: avoid; }
+  .cover-section { min-height: 297mm; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
