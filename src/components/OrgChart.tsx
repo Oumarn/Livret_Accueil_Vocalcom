@@ -48,7 +48,7 @@ export default function OrgChart() {
         {([
           { cx: 98, name1: "Andres", name2: "Braceras", role: "Mgr Spain & Latam" },
           { cx: 340, name1: "Karim", name2: "Helali", role: "Mgr Middle East" },
-          { cx: 582, name1: "Hamid", name2: "El Mejjad", role: "Mgr Middle East" },
+          { cx: 582, name1: "Hamid", name2: "El Mejjad", role: "Mgr Africa" },
         ] as const).map((p) => (
           <g key={p.name2}>
             <rect x={p.cx - 70} y="245" width="140" height="54" rx="8" fill="#EE783B" />
